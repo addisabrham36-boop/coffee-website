@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Brew Haven</title>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background:#111;
+  color:#fff;
+}
+
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  background:#000;
+  position:sticky;
+  top:0;
+}
+
+nav a {
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover {
+  color:#ff9800;
+}
+
+section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+form {
+  max-width:400px;
+  margin:auto;
+}
+
+input, textarea {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border:none;
+  outline:none;
+}
+
+button {
+  padding:10px;
+  background:#ff9800;
+  color:white;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  background:#e68900;
+}
+
+iframe {
+  margin-top:20px;
+  border:none;
+}
+
+.fade {
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+
+.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+footer {
+  background:#000;
+  padding:20px;
+  text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h2>Brew Haven</h2>
+  <nav>
+    <a href="gig2.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="fade">
+  <h1>Contact Us</h1>
+  <p>We’d love to hear from you</p>
+</section>
+
+<section class="fade">
+  <form>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="4" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<section class="fade">
+  <h2>Find Us</h2>
+  <iframe 
+    src="https://maps.google.com/maps?q=addis%20ababa&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    width="300" height="200">
+  </iframe>
+</section>
+
+<footer>
+  <p>© 2026 Brew Haven Coffee</p>
+</footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

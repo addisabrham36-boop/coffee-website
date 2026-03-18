@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brew Haven Coffee</title>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background:#111;
+  color:#fff;
+}
+
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  background:#000;
+  position:sticky;
+  top:0;
+}
+
+nav a {
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover {
+  color:#ff9800;
+}
+
+.hero {
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
+  background-size:cover;
+}
+
+.hero h1 {
+  font-size:3rem;
+}
+
+.hero button {
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  background:#ff9800;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.hero button:hover {
+  background:#e68900;
+}
+
+section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.cards {
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.card {
+  background:#222;
+  padding:20px;
+  width:250px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-10px);
+}
+
+.gallery img {
+  width:200px;
+  margin:10px;
+  border-radius:10px;
+}
+
+footer {
+  background:#000;
+  padding:20px;
+  text-align:center;
+}
+
+/* Fade animation */
+.fade {
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+
+.show {
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h2>Brew Haven</h2>
+  <nav>
+    <a href="gig2.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Urban Coffee Experience</h1>
+  <p>Fresh coffee. Modern vibe.</p>
+  <button onclick="scrollToSection()">Explore</button>
+</section>
+
+<section id="services" class="fade">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Premium Coffee</h3>
+      <p>Freshly brewed every day.</p>
+    </div>
+    <div class="card">
+      <h3>Fast Service</h3>
+      <p>Quick and friendly staff.</p>
+    </div>
+    <div class="card">
+      <h3>Cozy Space</h3>
+      <p>Perfect place to relax.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fade">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Brew Haven Coffee</p>
+</footer>
+
+<script>
+// smooth scroll
+function scrollToSection() {
+  document.getElementById("services").scrollIntoView({behavior:"smooth"});
+}
+
+// fade animation on scroll
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

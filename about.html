@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Brew Haven</title>
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+section {
+  padding:60px 20px;
+  text-align:center;
+  background:#181818;
+  margin:20px;
+  border-radius:10px;
+}
+
+h1, h2 {
+  color:#ff9800;
+  margin-bottom:20px;
+}
+
+p {
+  color:#ddd;
+}
+
+body {
+  background:#111;
+  color:#fff;
+}
+
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  background:#000;
+  position:sticky;
+  top:0;
+}
+
+nav a {
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover {
+  color:#ff9800;
+}
+
+section {
+  padding:60px 20px;
+  text-align:center;
+}
+
+.cards {
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.card {
+  background:#222;
+  padding:20px;
+  width:250px;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:translateY(-10px);
+}
+
+.fade {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+footer {
+  background:#000;
+  padding:20px;
+  text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h2>Brew Haven</h2>
+  <nav>
+    <a href="gig2.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="fade">
+  <h1>About Us</h1>
+  <p>We bring modern coffee culture with a cozy urban experience.</p>
+</section>
+
+<section class="fade">
+  <h2>Our Story</h2>
+  <p>Founded with passion, Brew Haven is a place where quality coffee meets a relaxing atmosphere.</p>
+</section>
+
+<section class="fade">
+  <h2>Why Choose Us</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>High Quality Beans</h3>
+      <p>Only the best coffee sourced globally.</p>
+    </div>
+    <div class="card">
+      <h3>Expert Baristas</h3>
+      <p>Professionally trained staff.</p>
+    </div>
+    <div class="card">
+      <h3>Urban Atmosphere</h3>
+      <p>Modern, calm, and stylish space.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Brew Haven Coffee</p>
+</footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+window.onload = () => {
+  document.querySelectorAll('.fade').forEach(el => {
+    el.classList.add('show');
+  });
+};
+</script>
+
+</body>
+</html>
