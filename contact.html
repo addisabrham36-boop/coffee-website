@@ -112,12 +112,12 @@ footer {
 </section>
 
 <section class="fade">
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea rows="4" placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+ <form action="https://formspree.io/f/mbdzqepj" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="_replyto" placeholder="Your Email" required>
+  <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
 </section>
 
 <section class="fade">
